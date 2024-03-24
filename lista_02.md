@@ -137,7 +137,7 @@ B) O código verifica se o número é par ou ímpar. Se for par, exibe a mensage
 
 C) O código verifica se o número é par, ímpar ou divisível por 3. Se for par, exibe a mensagem "O número é par!". Se for divisível por 3, exibe a mensagem "O número é divisível por 3!". Se for ímpar, exibe a mensagem "O número é ímpar e não é divisível por 3!".
 
-D) O código verifica se o número é par, se é divisível por 3 ou se é ímpar. Se for par, exibe a mensagem "O número é par!". Se for divisível por 3 (e não for par), exibe a mensagem "O número é divisível por 3!". Se for ímpar (e não for divisível por 3), exibe a mensagem "O número é ímpar e não é divisível por 3!".
+**D) O código verifica se o número é par, se é divisível por 3 ou se é ímpar. Se for par, exibe a mensagem "O número é par!". Se for divisível por 3 (e não for par), exibe a mensagem "O número é divisível por 3!". Se for ímpar (e não for divisível por 3), exibe a mensagem "O número é ímpar e não é divisível por 3!".** || Alternativa correta
 
 
 ______
@@ -201,7 +201,7 @@ Compra 3 aprovada. Saldo restante: 400
 Compra 4 negada. Saldo insuficiente e limite de crédito excedido.
 
 
-D)
+**D)** || Alternativa correta
 
 Compra 1 aprovada. Saldo restante: 800
 
@@ -221,7 +221,7 @@ Escolha a opção que responde corretamente:
 
 A) Setup -> Update -> Draw
 
-B) Preload -> Create -> Update
+**B) Preload -> Create -> Update** || Alternativa correta
 
 C) Load -> Initialize -> Render
 
@@ -234,7 +234,7 @@ Escolha a opção que responde corretamente:
 
 A) Renderizar gráficos 3D para jogos em HTML5.
 
-B) Simular interações físicas realistas, como colisões e movimentos, em jogos 2D.
+**B) Simular interações físicas realistas, como colisões e movimentos, em jogos 2D.** || Alternativa correta
 
 C) Criar efeitos de áudio para melhorar a experiência do usuário em jogos.
 
@@ -246,6 +246,29 @@ ______
 
 **7)** Implemente o pseudocódigo para o algoritmo representado no fluxograma da imagem.
 ![Uma imagem](assets/image.png)
+
+```
+algoritmo "Votação"
+
+var
+
+idade: inteiro;
+
+inicio
+
+Escreva("Insira sua idade")
+Leia (idade) 
+
+se (idade < 16) entao
+    escreva ("Não pode votar ")
+senao se (idade >= 16 E idade < 18)
+    escreva ("Voto facultativo!")
+senao 
+    escreva("Voto obrigatório")
+fimse    
+
+fimalgoritmo
+```
 ______
 
 **8)** Considere a implementação da classe base FormaGeometrica em um sistema de modelagem de formas geométricas. Sua tarefa é implementar, utilizando pseudocódigo, as classes derivadas Retangulo e Circulo, que herdam da classe FormaGeometrica, adicionando atributos específicos e métodos para calcular a área de um retângulo e de um círculo, respectivamente.
@@ -261,6 +284,30 @@ Classe FormaGeometrica:
     Método CalcularArea():
         # Implementação genérica para cálculo de área, a ser sobrescrita pelas subclasses.
 
+Classe Retangulo herda de FormaGeometrica:
+    Atributos: 
+        - base
+        - altura 
+
+    Método Construtor(cor, base, altura):
+        Chama o construtor da classe pai para definir o valor do atributo cor passado como parâmetro.
+        
+        Define o valor do atributo base e altura como os valores passados como parâmetro.
+
+    Método CalcularArea():
+        RETORNA base * altura
+
+Classe Circulo herda de FormaGeometrica:
+    Atributos: 
+        - raio
+
+    Método Construtor(cor, raio):
+        Chama o construtor da classe pai para definir o valor do atributo cor passado como parâmetro.
+
+        Define o valor do atributo raio como o valor passado como parâmetro.
+
+    Método CalcularArea():
+        RETORNA PI * (raio * raio)
 ```
 
 ______
@@ -271,6 +318,40 @@ Considere a fórumla de atualização velocidade:
 ```
     velocidade = velocidadeInicial + aceleracao*tempo
 ```
+
+**Solução:**
+
+```
+// Declaração das variáveis
+var distanciaTotal // Distância total a ser percorrida em metros
+var tempoLimite    // Tempo máximo permitido para completar a corrida em segundos
+var velocidadeMaxima // Velocidade máxima permitida em metros por segundo
+var velocidadeAtual // Velocidade atual do carro em metros por segundo
+
+// Definição da aceleração
+var aceleracao <- 1 // A cada segundo, a velocidade aumenta em 1 metro por segundo ao quadrado
+
+// Inicialização do tempo total
+var tempoTotal <- 0
+
+// Início do loop enquanto o tempo total for menor ou igual ao tempo limite e a distância total restante for maior que zero
+ENQUANTO (tempoTotal <= tempoLimite E distanciaTotal > 0) FACA
+    // Cálculo do tempo necessário para alcançar a próxima velocidade máxima
+    var tempoParaAlcancarProximaVelocidade <- (velocidadeMaxima - velocidadeAtual) / aceleracao
+    
+    // Cálculo da distância percorrida durante esse tempo
+    var distanciaPercorrida <- velocidadeAtual * tempoParaAlcancarProximaVelocidade + 0.5 * aceleracao * tempoParaAlcancarProximaVelocidade ^ 2
+    
+    // Redução da distância total restante
+    distanciaTotal <- distanciaTotal - distanciaPercorrida
+    
+    // Atualização do tempo total
+    tempoTotal <- tempoTotal + tempoParaAlcancarProximaVelocidade
+    
+    // Atualização da velocidade atual
+    velocidadeAtual <- velocidadeAtual + aceleracao * tempoParaAlcancarProximaVelocidade
+```
+
 
 ______
 
@@ -300,4 +381,45 @@ matrizB <- [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
 matrizSoma <- SomaDeMatrizes(matrizA, matrizB)
 Escrever("Soma das matrizes:")
 ImprimirMatriz(matrizSoma)
+```
+
+**Solução:**
+```
+função MultiplicacaoDeMatrizes(matrizA, matrizB):
+
+    // Verifica se o número de colunas de A é igual ao número de linhas de B
+    // Isso é importante porque a multiplicação de matrizes só é possível se o número de colunas de A for igual ao número de linhas de B.
+
+    SE tamanho(matrizA[0]) não for igual a tamanho(matrizB) então:
+        RETORNA "As matrizes não podem ser multiplicadas. O número de colunas de A não é igual ao número de linhas de B."
+
+    // Inicializa as dimensões das matrizes
+    // É necessário saber o número de linhas e colunas das matrizes A e B para percorrer corretamente seus elementos durante a multiplicação.
+
+    linhasA <- tamanho(matrizA)
+    colunasA <- tamanho(matrizA[0])
+    colunasB <- tamanho(matrizB[0])
+
+    // Inicializa uma matriz resultado com zeros
+    // A matriz resultado será preenchida com os resultados da multiplicação de A e B, por isso é inicializada com zeros.
+
+    matrizResultado <- novaMatriz(linhasA, colunasB)
+
+    // Calcula a multiplicação das matrizes
+    // Este loop aninhado calcula o produto de cada elemento da matriz resultado usando os elementos correspondentes das matrizes A e B.
+
+    PARA CADA i de 0 até linhasA - 1 faça:
+        PARA CADA j de 0 até colunasB - 1 faça:
+            PARA CADA k de 0 até colunasA - 1 faça:
+                matrizResultado[i][j] <- matrizResultado[i][j] + matrizA[i][k] * matrizB[k][j]
+
+    RETORNA matrizResultado
+
+# Exemplo de uso da função
+matrizA <- [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+matrizB <- [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+
+matrizProduto <- MultiplicacaoDeMatrizes(matrizA, matrizB)
+Escrever("Produto das matrizes:")
+ImprimirMatriz(matrizProduto)
 ```
